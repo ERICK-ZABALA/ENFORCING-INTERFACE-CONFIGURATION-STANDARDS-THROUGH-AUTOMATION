@@ -1,15 +1,22 @@
+# EXAMPLE NSO SANDBOX TESTBED WHEN YOU HAVE THE SAME CREDENTIALS IN YOUR DEVICES
+# -----------------------------------------------------------------------------
+# Command PYATS create testbed file "nso_sandbox_testbed.yaml"
+# PYTHON]$  pyats create testbed file --path sample/nso_sandbox_devices.xlsx --output nso_sandbox_testbed.yaml -v
+# Command PYATS validate testbed file "nso_sandbox_testbed_same_credentials.yaml"
+# PYTHON]$  pyats validate testbed --testbed nso_sandbox_testbed_same_credentials.yaml
+testbed:
+  credentials:
+    default:
+      password: '%ASK{}'
+      username: '%ASK{}'
+    enable:
+      password: '%ASK{}'
 devices:
   core-rtr01:
     connections:
       cli:
         ip: 10.10.20.173
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: iosxr
     platform: core-rtr01
     type: iosxr
@@ -18,12 +25,6 @@ devices:
       cli:
         ip: 10.10.20.174
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: iosxr
     platform: core-rtr02
     type: iosxr
@@ -32,12 +33,6 @@ devices:
       cli:
         ip: 10.10.20.175
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: iosxe
     platform: dist-rtr01
     type: iosxe
@@ -46,12 +41,6 @@ devices:
       cli:
         ip: 10.10.20.176
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: iosxe
     platform: dist-rtr02
     type: iosxe
@@ -60,12 +49,6 @@ devices:
       cli:
         ip: 10.10.20.177
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: nxos
     platform: dist-sw01
     type: nxos
@@ -74,12 +57,6 @@ devices:
       cli:
         ip: 10.10.20.178
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: nxos
     platform: dist-sw02
     type: nxos
@@ -88,12 +65,6 @@ devices:
       cli:
         ip: 10.10.20.171
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: asa
     platform: edge-firewall01
     type: asa
@@ -102,26 +73,14 @@ devices:
       cli:
         ip: 10.10.20.172
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: ios
     platform: edge-sw01
     type: ios
   internet-rtr01:
     connections:
       cli:
-        ip: 10.10.20.182
+        ip: 10.10.20.181
         protocol: telnet
-    credentials:
-      default:
-        password: '%ASK{}'
-        username: cisco
-      enable:
-        password: '%ASK{}'
     os: iosxe
     platform: internet-rtr01
     type: iosxe
