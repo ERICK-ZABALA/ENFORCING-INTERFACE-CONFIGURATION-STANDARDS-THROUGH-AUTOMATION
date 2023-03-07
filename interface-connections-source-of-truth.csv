@@ -1,0 +1,11 @@
+Device Name,Interface,Connected Device,Connected Interface,Purpose
+edge-sw01,GigabitEthernet 0/1,edge-firewall01,GigabitEthernet 0/1,Connection to outbound firewall
+edge-sw01,GigabitEthernet 0/2,core-rtr01,GigabitEthernet 0/0/0/1,Primary core router
+edge-sw01,GigabitEthernet 0/4,core-rtr02,GigabitEthernet 0/0/0/1,Secondary core router
+edge-sw01,GigabitEthernet 0/2,cob-mgmt,GigabitEthernet 1/1,Managment network
+,,,,
+core-rtr01,GigabitEthernet 0/0/0/0,core-rtr02,GigabitEthernet 0/0/0/0,Peer link to secondary core
+core-rtr01,GigabitEthernet 0/0/0/1,edge-sw01,GigabitEthernet 0/2,Path to outside edge
+core-rtr01,GigabitEthernet 0/0/0/2,dist-rtr01,GigabitEthernet 2,Path to inside distribution
+core-rtr01,GigabitEthernet 0/0/0/3,dist-rtr02,GigabitEthernet 2,Path to inside distribution
+core-rtr01,MgmtEth 0/0/CPU0/0,cob-mgmt,GigabitEthernet 1/2,Managment network
